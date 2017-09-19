@@ -19,7 +19,7 @@ git submodule add {path_to_the_git_repo}
 ```
 
 4. Adjust the apache host config in php/hostconfig.conf and the mounted webroot (currently ./html) in docker-compose.yml to meet your projects needs.
-  4.1 You can specify a command that is supposed to run on container start inside the apache container at the "command" key of the php service defined in doccker-compose.yml.
+  - You can specify a command that is supposed to run on container start inside the apache container at the "command" key of the php service defined in doccker-compose.yml.
 5. Build and start the docker services defined in the docker-compose.yml file using the command ```docker-compose up -d --build```.
 6. Browse to your php projects webroot on http://localhost:8000
 7. Browse to PhpMyAdmin on http://localhost:8080 to inspect the database or import/export database data.
