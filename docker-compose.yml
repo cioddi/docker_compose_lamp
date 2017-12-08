@@ -30,8 +30,6 @@ services:
     environment:
       - PMA_ARBITRARY=1
     restart: always
-    ports:
-      - 8080:80
     volumes:
       - /sessions
     depends_on:
@@ -40,4 +38,12 @@ services:
       MYSQL_ROOT_PASSWORD: root
       PMA_HOST: db
       #volumes:
-    #db_data:
+  phpmyadmin_proxy:  
+    image: nginx:stable
+    volumes:
+      - ./nginx_phpmyadmin/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx_phpmyadmin/.htpasswd:/etc/nginx/.htpasswd:ro
+    depends_on:
+      - phpmyadmin
+    ports:
+      - 8080:80
