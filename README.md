@@ -22,5 +22,5 @@ git submodule add {path_to_the_git_repo}
   - You can specify a command that is supposed to run on container start inside the apache container at the "command" key of the php service defined in doccker-compose.yml.
 5. Build and start the docker services defined in the docker-compose.yml file using the command ```docker-compose up -d --build```.
 6. Browse to your php projects webroot on http://localhost:8000
-7. Browse to PhpMyAdmin on http://localhost:8080 to inspect the database or import/export database data.
+7. Browse to PhpMyAdmin on http://localhost:8080 (dev:work) to inspect the database or import/export database data.
 
